@@ -7,9 +7,14 @@ import { HelloComponent } from './hello.component';
 import { InputComponent } from './input/input.component';
 import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
-
+import {Routes, RouterModule} from '@angular/router';
+const ROUTES:Routes = [
+  {path:'input', component : InputComponent},
+  {path:'edit', component : EditComponent},
+  {path:'list', component : ListComponent},
+]
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
+  imports:      [ BrowserModule, FormsModule,RouterModule.forRoot(ROUTES) ],
   declarations: [ AppComponent, HelloComponent, InputComponent, ListComponent, EditComponent ],
   bootstrap:    [ AppComponent ]
 })
