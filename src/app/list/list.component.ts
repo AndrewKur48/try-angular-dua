@@ -1,15 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
+  hasil = [];
+  temp = [];
+  co = 0;
+  nam;
+  pen;
+  constructor(private route : ActivatedRoute) { }
 
   ngOnInit() {
+    try{
+    let tempnam = this.route.snapshot.paramMap.get('nam');
+    this.nam = tempnam;
+    let temppen = this.route.snapshot.paramMap.get('pen');
+    this.pen = temppen;
+    this.temp.push(this.nam);
+    this.temp.push(this.pen);
+    this.hasil.push(this.temp);
+    }
+    catch{
+
+    }
   }
+
+
 
 }
