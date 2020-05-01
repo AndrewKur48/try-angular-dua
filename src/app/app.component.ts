@@ -15,6 +15,6 @@ export class AppComponent  {
     this.router.navigate(['/edit']);
   }
   goList(){
-    this.router.navigate(['/list']);
+    this.router.navigate(['/list',"",""]);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {GlobService} from '../glob.service';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -8,13 +9,16 @@ import {Router} from '@angular/router';
 export class EditComponent implements OnInit {
   tempnam = "";
   temppen = "";
-  constructor(private router :Router) { }
+  cekData;
+  constructor(private router :Router, public variableglobal : GlobService) { }
 
   ngOnInit() {
+    this.cekData = this.variableglobal.getData();
   }
-  sInput(nam,pen){
+  sEdit(nam,pen){
     this.tempnam = nam;
     this.temppen = pen;
-    this.router.navigate(['/list',this.tempnam,this.temppen]);
+    this.variableglobal.editData(this.tempnam,this.temppen);
+    this.router.navigate(['/list',"",""]);
   }
 }

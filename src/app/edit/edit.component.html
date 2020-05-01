@@ -1,7 +1,7 @@
 <div>
-input Nama Jurusan: <input [(ngModel)] = "namJur" type="text" id = "namJur">
+input Nama Jurusan yang mau di Edit: <br><input [(ngModel)] = "namJur" type="text" id = "namJur"><br>
 
-input Penjelasan: <input [(ngModel)] = "penJur" type="text" id = "penJur">
-
-<button (click) = "sInput(namJur,penJur)">Input</button>
+input Penjelasan Baru: <br><input [(ngModel)] = "penJur" type="text" id = "penJur">
+<br><br>
+<button (click) = "sEdit(namJur,penJur)">Edit</button>
 </div>
